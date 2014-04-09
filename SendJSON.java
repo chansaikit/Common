@@ -35,29 +35,21 @@ public class SendJSON {
 		
 		//enter your information
 		String first_name = "";
-		String last_name = "";
-		String email = "";
-		String position_id = "";
-		String explanation = "";
-		String source = "";
-		String resume = "";
+		String last_name = ""; 
+		String file = "";
 
 		JSONArray projects = new JSONArray();
 		projects.put("");
 
 		JSONObject json = new JSONObject();
 		json.put("first_name", first_name);
-		json.put("last_name", last_name);
-		json.put("email", email);
-		json.put("position_id", position_id);
-		json.put("explanation", explanation);
-		json.put("projects", projects);
-		json.put("source", source);
-		json.put("resume", pdf);
+		json.put("last_name", last_name); 
+		json.put("file", pdf);
 
 		@SuppressWarnings("resource")
 		HttpClient  httpClient = new DefaultHttpClient();
-		String url = "https://getperka.com/api/2/apply";
+		
+		String url = "web site url"; //enter your url here
 
 		try {
 			HttpPost request = new HttpPost(url);
@@ -83,7 +75,7 @@ public class SendJSON {
 	
 	public static byte[] convertPDFtoByteArray(String fileName) throws FileNotFoundException{
 
-		File file = new File("Saikit Chan.pdf");
+		File file = new File(fileName);
 		 
         FileInputStream fis = new FileInputStream(file); 
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
